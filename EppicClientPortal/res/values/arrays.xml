@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array  name="moduleNames">
+        <item>Card and Bal</item>
+        <item>client statement query</item>
+        <item>alerts service</item>
+        <item>customer service</item>
+        <item>deposit rates</item>
+        <item>Security Profile</item>
+    </string-array>
+
+        
+    <array name="moduleImages">
+        <item>@drawable/airorderquery</item>
+        <item>@drawable/financing_product</item>
+        <item>@drawable/alerts_service</item>
+        <item>@drawable/customer_service</item>
+        <item>@drawable/deposit_rates</item>
+        <item>@drawable/relate_creditcard</item>
+    </array>
+    
+    <string-array name="clientstmt_group">
+        <item>Summary of Transactions</item>
+        <item>Pending Transactions From Last Month That Settled This Month</item>
+        <item>Pending Transactions</item>
+        <item>Cleared Transactions</item>
+    </string-array>
+    
+    <string-array name="clientstmt_group_child_trxsum">
+        <item>Date Range:</item>
+        <item>Starting Balance:</item>
+        <item>Credits:</item>
+        <item>Debits:</item>
+        <item>Available Balance:</item>
+        <item>Card Number:</item>
+    </string-array>
+    
+    <string-array name="clientstmt_group_child_pendingtrxlastmonth">
+        <item>Transaction Date:</item>
+        <item>Date Posted:</item>
+        <item>Merchant/ATM Location/Confirmation Number:</item>
+        <item>Transaction Type:</item>
+        <item>Hold Amount:</item>
+        <item>Posted Amount:</item>
+        <item>Difference:</item>
+    </string-array>
+    
+    <string-array name="clientstmt_group_child_pendingtrx">
+        <item>Date Posted:</item>
+        <item>Merchant/ATM Location/Confirmation Number:</item>
+        <item>Transaction Type:</item>
+        <item>Amount:</item>
+    </string-array>
+    
+    <string-array name="clientstmt_group_child_clearedtrx">
+        <item>Date Posted:</item>
+        <item>Merchant/ATM Location/Confirmation Number:</item>
+        <item>Transaction Type:</item>
+        <item>Amount:</item>
+    </string-array>
+</resources>

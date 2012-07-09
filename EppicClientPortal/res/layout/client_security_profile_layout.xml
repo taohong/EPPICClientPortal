@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <ScrollView     xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="fill_parent"     android:layout_height="fill_parent"     android:scrollbars="none"     android:layout_weight="1">   
+<TableLayout 
+    android:id="@+id/clientSecurityProfileView"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1" 
+    android:paddingTop="0dp"
+    >
+    
+
+    
+    <TableRow android:gravity="center" >
+        <TextView
+            android:text="@string/password"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent" 
+            android:gravity="center"
+            android:textColor="@color/myTextColor"  
+            />
+    </TableRow>
+
+    <TableRow android:gravity="center" >
+
+        
+        <EditText
+            android:id="@+id/oldPasswordEditView"
+            android:hint="@string/oldPassword"
+            android:lines="1"
+            android:inputType="textPassword"
+            />
+
+        
+    </TableRow>
+
+    <TableRow android:gravity="center" >
+		
+		 
+		
+		<EditText
+		    android:id="@+id/newPasswordEditView"
+		    android:hint="@string/newPassword" 
+		    android:lines="1"
+		    android:inputType="textPassword"
+		    />
+
+    </TableRow>
+    
+     <TableRow android:gravity="center" >
+		
+		 
+		<EditText
+		    android:id="@+id/confirmPasswordEditView"
+		    android:hint="@string/confirmPassword" 
+		    android:lines="1"
+		    android:inputType="textPassword"
+		    />
+
+    </TableRow>
+    
+    <TableRow android:gravity="center" >
+
+        <TextView
+             android:gravity="center" 
+            android:text="@string/securityQuestion"
+            android:textColor="@color/myTextColor"   />
+    </TableRow>
+    
+      
+     <TableRow android:gravity="center" >
+		
+		 
+		<EditText
+		    android:id="@+id/question"
+		    android:hint="@string/question" 
+		    android:lines="1"
+		    />
+
+    </TableRow>
+    
+    <TableRow android:gravity="center" >
+		
+		 
+		<EditText
+		    android:id="@+id/answer"
+		    android:hint="@string/answer" 
+		    android:lines="1"
+		    />
+
+    </TableRow>
+
+    <TableRow android:gravity="center" >
+
+        <EditText
+            android:id="@+id/confirmAnswer"
+            android:hint="@string/confirmAnswer"
+            android:lines="1" >
+
+            <requestFocus />
+        </EditText>
+    </TableRow>
+    
+   <TableRow android:gravity="center">
+       <TextView
+		    android:text="@string/clientPhoto"
+		    android:gravity="center"
+		    android:textColor="@color/myTextColor"   
+		    />
+   </TableRow>
+   
+   <TableRow android:gravity="center" >
+		
+		
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mbutton_press"
+        android:contentDescription="@string/clientPhoto"
+         />
+
+    </TableRow>
+    <TableRow android:gravity="center" 
+     	   	  android:paddingTop="10dp">
+		
+	<EditText 
+	    android:id="@+id/photoName"
+	    android:hint="@string/photoName"
+	     android:lines="1" 
+	    />
+    </TableRow>
+ <TableRow android:gravity="center" 
+     	   android:paddingTop="10dp">
+		
+		
+    <Button android:id="@+id/okSecurityProfile"
+        	android:text="@string/ok"/>
+    </TableRow>
+</TableLayout>
+</ScrollView>

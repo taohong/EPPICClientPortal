@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Welcome!</string>
+    <string name="app_name">EPPIC Client Portal</string>
+    <string name="ok">OK</string>
+    <!-- client security profile -->
+    <string name="clientSecurityProfile">Client Security Profile</string>
+    <string name="oldPassword">Old Password</string>
+    <string name="newPassword">New Password</string>
+    <string name="confirmPassword">Confirm Password</string>
+    <string name="clientPhoto">Choose Client Photo</string>
+    <string name="password">Password Configuration</string>
+    <!-- security Question -->
+	<string name="securityQuestion">Security Question Configuration</string>
+	<string name="question">Security Question</string>
+	<string name="answer">Answer</string>
+	<string name="confirmAnswer">Confirm Answer</string>
+	<string name="photoName">Name</string>
+	<!-- my color -->
+	<color name="mybg">#528ACE</color>
+	<color name="myTextColor">#000000</color>
+</resources>
