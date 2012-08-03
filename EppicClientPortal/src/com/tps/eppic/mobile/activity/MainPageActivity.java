@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.tps.eppic.mobile.adapter.ImageAdapter;
+import com.tps.eppic.mobile.cache.MobileClientPortalCache;
 import com.tps.eppic.mobile.util.CPUtils;
 
 
@@ -20,6 +21,7 @@ public class MainPageActivity extends Activity {
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	MobileClientPortalCache.getInstance().setElement(MobileClientPortalCache.KEY_PERSON_ID, 1);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.grid_template);
         //get icon res and icon names from xml

@@ -14,6 +14,10 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.tps.eppic.mobile.bean.CardAndBalance;
+import com.tps.eppic.mobile.cache.MobileClientPortalCache;
+import com.tps.eppic.mobile.manager.CardAndBalanceInquiryManager;
+
 public class CardAndBalanceInqiryActivity extends Activity {
     /** Called when the activity is first created. */
 
@@ -25,7 +29,7 @@ public class CardAndBalanceInqiryActivity extends Activity {
             { "\nName:", "\nAddress:" },
             { "\nCard Number:", "\nStatus:", "\nIssue Date:", "\nExpire Date:",
                     "\nFreeze Date:", "\nCash Balance:", "\nTotal:" },
-            { "\nMethod of contact:", "\nEmail:", "\nPhone:" } };
+            { "\nMethod of contact:", "\nContact:" } };
 
     // testing result data
     private String[] clientInfos = new String[] { "    Sam Li",
@@ -40,20 +44,50 @@ public class CardAndBalanceInqiryActivity extends Activity {
             "    None", "    test001@acs-inc.com", "    3920618956" };
 
     private String[][] childDescs = new String[][] {
-            { assembleInfos(titles[0], clientInfos) },
-            { assembleInfos(titles[1], clientCardAndBalanceInfos) },
-            { assembleInfos(titles[2], automatedDepositNotificationInfos) } };
+            { assembleInfos(titles[0], getClientInfos()) },
+            { assembleInfos(titles[1], getClientCardAndBalanceInfos()) },
+            { assembleInfos(titles[2], getAutomatedDepositNotificationInfos()) } };
 
     private String assembleInfos(String[] titles, String[] infos) {
         StringBuffer stringBuffer = new StringBuffer();
-        for (int i = 0; i < clientInfos.length; i++) {
+        for (int i = 0; i < titles.length; i++) {
             stringBuffer.append(titles[i] + infos[i] + "\n");
         }
         return stringBuffer.toString();
     }
 
-    @Override
+    private String[] getAutomatedDepositNotificationInfos() {
+    	CardAndBalance cardholder = CardAndBalanceInquiryManager.getInstance().getCardAndBalance(false);
+		String method = "    " + cardholder.getNotifMethod();
+		String contact = "    " + cardholder.getNotif();
+		String[] automatedDepositNotificationInfos = new String[]{method, contact};
+		return automatedDepositNotificationInfos;
+	}
+
+	private String[] getClientCardAndBalanceInfos() {
+		CardAndBalance cardholder = CardAndBalanceInquiryManager.getInstance().getCardAndBalance(false);
+		String pan = "    " + cardholder.getPan();
+		String cardStatus = "    NON FRAUD SUSPENSION";
+		String issueDate = "    04/11/2012";
+		String expireDate = "    04/30/2015";
+		String freezeDate = "    04/11/2012";
+		String balance = cardholder.getBalance();
+		String total = cardholder.getBalance();
+		String[] clientCardAndBalanceInfos = new String[]{pan, cardStatus, issueDate, expireDate, freezeDate, balance, total};
+		return clientCardAndBalanceInfos;
+	}
+
+	private String[] getClientInfos() {
+		CardAndBalance cardholder = CardAndBalanceInquiryManager.getInstance().getCardAndBalance(false);
+		String cardholderName = "    " + cardholder.getFirstName() + " " + cardholder.getLastName();
+		String cardholderAddress = "    " + cardholder.getAddress1() + " " + cardholder.getCity() + ", " + cardholder.getState() + " " + cardholder.getZip();
+		String[] clientInfos = new String[] {cardholderName,cardholderAddress};
+		return clientInfos;
+	}
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
+		
         super.onCreate(savedInstanceState);
         setContentView(R.layout.expand_list_template);
         ExpandableListAdapter adapter = new BaseExpandableListAdapter() {
